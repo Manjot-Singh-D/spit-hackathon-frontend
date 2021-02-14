@@ -21,6 +21,7 @@ function LoginPage() {
       .then((res) => {
         console.log(res);
         setUserDetails(res.data.name, res.data.email, res.data.current_balance);
+        window.location.href = "/employeePage";
       })
       .catch((err) => console.log(err));
   };

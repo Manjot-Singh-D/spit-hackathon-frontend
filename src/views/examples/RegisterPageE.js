@@ -37,6 +37,7 @@ function RegisterPage() {
       .post("/backend/empprofile", user)
       .then((res) => {
         console.log(res);
+        window.location.href = "/employerPage";
       })
       .catch((err) => console.log(err));
   };

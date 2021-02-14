@@ -20,6 +20,7 @@ function LoginPage() {
       .post("/backend/emplogin", user)
       .then((res) => {
         setUserDetails(res.data.name, res.data.email, res.data.current_balance);
+        window.location.href = "/employerPage";
       })
       .catch((err) => console.log(err));
   };
