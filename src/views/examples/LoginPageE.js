@@ -66,7 +66,7 @@ function LoginPage() {
                     onChange={handleChange}
                   />
                   <Button block className="btn-round" color="danger">
-                    Register
+                    Login
                   </Button>
                 </Form>
                 <div className="forgot">

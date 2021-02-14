@@ -328,12 +328,16 @@ function ModalExampleCloseIcon(props) {
       </form>
     );
   };
-  const payToEmployee = () => {
+  const payToEmployee = (details) => {
     return (
       <form>
         <div>
+          <p>S.no </p>
+          <input type="text " name="sno" value={details.sno} />
+        </div>
+        <div>
           <p>Name </p>
-          <input type="text " name="name" />
+          <input type="text " name="name" value={details.name} />
         </div>
         <div>
           <p>Email</p>
