@@ -34,6 +34,7 @@ function ModalExampleCloseIcon(props) {
       };
     });
   };
+  const [employerProjects, setEmployerProjects] = useState({});
   const [newProject, setnewProject] = useState({
     emp_name: "",
     emp_email: "",
@@ -202,40 +203,40 @@ function ModalExampleCloseIcon(props) {
       </form>
     );
   };
-  const employerCurrentProjects = () => {
+  const employerCurrentProjects = (project) => {
     return (
       <form>
         <div>
           <p>Name </p>
-          <input type="text " />
+          <input type="text " value={project.emp_name} />
         </div>
         <div>
           <p>Email</p>
-          <input type="text " />
+          <input type="text " value={project.emp_email} />
         </div>
         <div>
           <p>Project Name</p>
-          <input type="text " />
+          <input type="text " value={project.project} />
         </div>
         <div>
           <p>Work started on</p>
-          <input type="text " />
+          <input type="text " value={project.date_started} />
         </div>
         <div>
           <p>Deadline</p>
-          <input type="text " />
+          <input type="text " value={project.deadline} />
         </div>
         <div>
           <p>Rate per hour/day</p>
-          <input type="text " />
+          <input type="text " value={project.rate_day_hour} />
         </div>
         <div>
           <p>no of days/hours to work</p>
-          <input type="text " />
+          <input type="text " value={project.days_hours_work} />
         </div>
         <div>
           <p>Proposed Amount</p>
-          <input type="text " />
+          <input type="text " value={project.proposed_amount} />
         </div>
       </form>
     );
@@ -406,7 +407,7 @@ function ModalExampleCloseIcon(props) {
           : props.type === "addNewProject"
           ? addNewProject()
           : props.type === "employerProjectsDetails"
-          ? employerCurrentProjects()
+          ? employerCurrentProjects(props.data)
           : props.type === "payToEmployee"
           ? payToEmployee()
           : props.type === "transactionHistory"
